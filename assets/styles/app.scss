@@ -1,0 +1,93 @@
+@import 'foundation/settings';
+@import 'foundation';
+
+@include foundation-everything($flex: true);
+
+$white       : #FFFFFF;
+$ghost       : #FAFAFA;
+$snow        : #F9F9F9;
+$vapor       : #F6F6F6;
+$white-smoke : #F5F5F5;
+$silver      : #EFEFEF;
+$smoke       : #EEEEEE;
+$gainsboro   : #DDDDDD;
+$iron        : #CCCCCC;
+$base        : #AAAAAA;
+$aluminum    : #999999;
+$jumbo       : #888888;
+$monsoon     : #777777;
+$steel       : #666666;
+$charcoal    : #555555;
+$tuatara     : #444444;
+$oil         : #333333;
+$jet         : #222222;
+$black       : #000000;
+
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	overflow: hidden;
+}
+
+.chat-window {
+	
+	.fullWidth {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: initial;
+	}
+	
+	.header {
+		background-color: $oil;
+		height: 50px;
+
+		h5 {
+			color: $aluminum;
+			margin-top: 1vh;
+			text-align: center;
+		}
+	}
+
+	.online-people {
+		background-color: $silver;
+		max-height: 94.8vh;
+		bottom: 0px;
+		top: 50px;
+		overflow-y: auto;
+		overflow-x: hidden;
+		-webkit-overflow-scrolling: touch;
+
+		ul {
+			li {
+				list-style-type: none;
+				margin-top: 1vh;
+				margin-bottom: 1vh;
+				span {
+					margin-left: 1vh;
+				}
+			}
+		}
+	}
+
+	.chat {
+		background-color: $snow;
+		top: 50px;
+		bottom: 0px;
+		.chat-feed {
+			min-height: 90vh;
+		}
+
+		.chat-send-message {
+			
+		}
+	}
+
+	.chat-settings {
+		background-color: $silver;
+	}
+
+}
