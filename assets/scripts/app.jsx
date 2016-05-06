@@ -4,13 +4,12 @@ export default class Message extends React.Component {
 		return (
 			<li>
 				<img src="http://placehold.it/40x40" />
-				<strong>{this.props.user} :</strong>
+				<strong>{this.props.user}: </strong>
 				<span>{this.props.text}</span>
 			</li>
 		);
 	}
 };
-
 
 
 export default class MessageList extends React.Component {
@@ -39,7 +38,6 @@ export default class MessageList extends React.Component {
 		);
 	}
 };
-
 
 
 export default class MessageForm extends React.Component {
@@ -89,11 +87,14 @@ export default class ChatFeed extends React.Component {
 		this.handleMessageSubmit = this.handleMessageSubmit.bind(this);
 	}
 
-
+ 
 	handleMessageSubmit(message) {
+		//handle submit message
 		var {messages} = this.state;
-		messages.push(message);
-		this.setState({messages});
+		if (message.text) {
+			messages.push(message);
+			this.setState({messages});
+		}
 		//todo socket emit
 	}
 
@@ -113,6 +114,58 @@ export default class ChatFeed extends React.Component {
 };
 
 
+export default class User extends React.Component {
+
+	render() {
+		return (
+			<li>
+				<img src='http://placehold.it/40x40' />
+				<span>{this.props.userName}</span>
+			</li>
+		);
+	}
+};
+
+
+export default class OnlineUsers extends React.Component {
+
+	constructor(props) {
+		super(props);
+		this.state = { users: ['Eska', 'Lol123', 'Imba', 'Fetta', 'lol'] };
+	}
+
+	render() {
+		return (
+			<div className='column medium-2 online-people'>
+				<ul>
+					{
+						this.state.users.map((user, i) => {
+							return (
+								<User
+									key={i}
+									userName={user}
+								/>
+							);
+						})
+					}
+				</ul>
+			</div>
+		);
+	}
+};
+
+
+export default class Settings extends React.Component {
+	render() {
+		return (
+			<div className='column medium-2 chat-settings'>
+
+			</div>
+		);
+	}
+};
+
+
 export default class ChatApp extends React.Component {
 	constructor(props) {
 		super(props);
@@ -120,43 +173,26 @@ export default class ChatApp extends React.Component {
 
 	render() {
 		return (
-			<div className='row collapse fullWidth'>
-				<div className='column medium-2 online-people'>
-					<ul>
-						<li>
-							<img src='http://placehold.it/40x40' />
-							<span> lol </span>
-						</li>
-						<li>
-							<img src='http://placehold.it/40x40' />
-							<span> Eska </span>
-						</li>
-						<li>
-							<img src='http://placehold.it/40x40' />
-							<span> Imba </span>
-						</li>
-						<li>
-							<img src='http://placehold.it/40x40' />
-							<span> superLol </span>
-						</li>
-						<li>
-							<img src='http://placehold.it/40x40' />
-							<span> smiley </span>
-						</li>
-						<li>
-							<img src='http://placehold.it/40x40' />
-							<span> youtube </span>
-						</li>
-					</ul>
+			<div className='chat-window'>
+				<div className='row collapse fullWidth header'>
+					<div className='column medium-2'>
+						<h5>Online users</h5>
+					</div>
+					<div className='column medium-8'>
+						<h5>Eska chat!</h5>
+					</div>
+					<div className='column medium-2'>
+						<h5>Settings</h5>
+					</div>
 				</div>
-				<ChatFeed/>
-				<div className='column medium-2 chat-settings'>
-					sadaasd
+				<div className='row collapse fullWidth'>
+					<OnlineUsers />
+					<ChatFeed />
+					<Settings />
 				</div>
 			</div>
 		);
 	}
-
 };
 
 ReactDOM.render(<ChatApp/>, document.getElementById('chat-app'));

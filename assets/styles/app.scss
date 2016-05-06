@@ -61,7 +61,7 @@ html, body {
 		overflow-x: hidden;
 		-webkit-overflow-scrolling: touch;
 
-		ul {
+		ul {		
 			li {
 				list-style-type: none;
 				margin-top: 1vh;
@@ -83,6 +83,17 @@ html, body {
 			overflow-y: auto;
 			overflow-x: hidden;
 			-webkit-overflow-scrolling: touch;
+			
+			li {
+				list-style-type: none;
+				margin-top: 1vh;
+				margin-bottom: 1vh;
+				strong {
+					margin-left: 1vh;
+				}
+				
+			}
+
 		}
 
 		.chat-send-message {

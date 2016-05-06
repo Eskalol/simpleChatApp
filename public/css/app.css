@@ -3329,6 +3329,12 @@ html, body {
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch; }
+    .chat-window .chat .chat-feed li {
+      list-style-type: none;
+      margin-top: 1vh;
+      margin-bottom: 1vh; }
+      .chat-window .chat .chat-feed li strong {
+        margin-left: 1vh; }
 
 .chat-window .chat-settings {
   background-color: #EFEFEF; }
