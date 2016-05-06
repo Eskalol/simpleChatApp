@@ -12,7 +12,10 @@ var gulp 	= require('gulp'),
 	jade	= require('gulp-jade'),
 	plumber	= require('gulp-plumber'),
 	babel 	= require('gulp-babel'),
-	gutil 	= require('gulp-util');
+	gutil 	= require('gulp-util'),
+	browserify	= require('browserify'),
+	babelify	= require('babelify'),
+	source 		= require('vinyl-source-stream');
 
 /**
  * punlic destination goes here!
@@ -66,7 +69,7 @@ var path = {
 		paths.assets + '/scripts/**/*.js'
 	],
 	'jsx' : [
-		paths.assets + '/scripts/**/*.jsx'
+		paths.assets + '/scripts/app.jsx'
 	],
 	'sassvendor' : [
 		paths.bower + '/foundation-sites/scss'
@@ -81,7 +84,7 @@ var path = {
 
 /**
  * Compile ES2015 javascript
- */
+ *
 gulp.task('react', function() {
 	return gulp.src(path.jsx)
 		.pipe(babel({
@@ -89,6 +92,16 @@ gulp.task('react', function() {
 		}))
 		.pipe(concat('reactapp.js'))
 		.pipe(production ? uglify() : gutil.noop())
+		.pipe(gulp.dest(public + '/js'))
+		.pipe(serve ? server.notify() : gutil.noop());
+}); */
+
+gulp.task('react', function() {
+	return browserify({entries: path.jsx, extensions: ['.jsx'], debug: true})
+		.transform('babelify', {presets: ['es2015', 'react']})
+		.bundle()
+		.pipe(production ? uglify() : gutil.noop())
+		.pipe(source('reactapp.js'))
 		.pipe(gulp.dest(public + '/js'))
 		.pipe(serve ? server.notify() : gutil.noop());
 });

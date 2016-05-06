@@ -78,7 +78,11 @@ html, body {
 		top: 50px;
 		bottom: 0px;
 		.chat-feed {
-			min-height: 90vh;
+			min-height: 87vh;
+			max-height: 87vh;
+			overflow-y: auto;
+			overflow-x: hidden;
+			-webkit-overflow-scrolling: touch;
 		}
 
 		.chat-send-message {
