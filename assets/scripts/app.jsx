@@ -14,10 +14,10 @@ export default class Message extends React.Component {
 
 
 export default class MessageList extends React.Component {
+
 	constructor(props) {
 		super(props);
 	}
-
 
 	render() {
 		return (
