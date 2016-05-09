@@ -1,0 +1,8 @@
+/**
+ * here we import foundation and other stuff
+ */
+
+@import 'foundation/settings';
+@import 'foundation';
+
+@include foundation-everything($flex: true);

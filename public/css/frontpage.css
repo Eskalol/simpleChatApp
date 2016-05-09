@@ -1,5 +1,8 @@
 @charset "UTF-8";
 /**
+ * here we import foundation and other stuff
+ */
+/**
  * Foundation for Sites by ZURB
  * Version 6.2.1
  * foundation.zurb.com
@@ -3287,54 +3290,33 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  width: 100%;
-  overflow: hidden; }
+  width: 100%; }
 
-.chat-window .fullWidth {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: initial; }
+.jumbo {
+  background: url(/imgs/chat-app-bg.png);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 300px 0;
+  margin-bottom: 30px; }
+  .jumbo h1 {
+    color: #fff;
+    text-align: cener;
+    margin-bottom: 15px; }
+  .jumbo section {
+    padding-bottom: 150px; }
 
-.chat-window .header {
-  background-color: #333333;
-  height: 50px; }
-  .chat-window .header h5 {
-    color: #999999;
-    margin-top: 1vh;
-    text-align: center; }
+.footer {
+  background-color: #222;
+  height: 5vh; }
 
-.chat-window .online-people {
-  background-color: #EFEFEF;
-  max-height: 94.8vh;
-  bottom: 0px;
-  top: 50px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch; }
-  .chat-window .online-people ul li {
-    list-style-type: none;
-    margin-top: 1vh;
-    margin-bottom: 1vh; }
-    .chat-window .online-people ul li span {
-      margin-left: 1vh; }
+.name {
+  width: 40vh;
+  background: #001C32;
+  padding: 5px 30px;
+  height: 70px !important; }
 
-.chat-window .chat {
-  background-color: #F9F9F9;
-  top: 50px;
-  bottom: 0px; }
-  .chat-window .chat .chat-feed {
-    min-height: 87vh;
-    max-height: 87vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch; }
-    .chat-window .chat .chat-feed li {
-      list-style-type: none;
-      margin-top: 1vh;
-      margin-bottom: 1vh; }
-      .chat-window .chat .chat-feed li strong {
-        margin-left: 1vh; }
-
-.chat-window .chat-settings {
-  background-color: #EFEFEF; }
+.top {
+  min-height: 50px !important; }

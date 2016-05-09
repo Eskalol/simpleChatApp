@@ -1,11 +1,57 @@
 doctype html
 html
 	head
-		title Eska chat!
-		link(rel="stylesheet", href="css/app.css")
+		title Eska - Simple chat app
+		link(rel='stylesheet', href='css/frontpage.css')
 	body
-		#chat-app
+		#top
+		div.top(data-sticky-container)
+			.title-bar.sticky.is-at-top.is-stuck.shrink(data-sticky data-options="marginTop:0;" style="width:100%" data-top-anchor="1")
+				.title-bar-left
+					.name
+						h3 Eska's chat app
+				.title-bar-right
+					ul.menu.align-right(role='menubar')
+						li(role='menuitem'): a(href='#top'): h5 Home
+						li(role='menuitem'): a(href='#about'): h5 About
+
+		section.jumbo
+			.row
+				.columns.large-12
+					h1.text-center Simple Chat app
+			.row.collapse
+					.columns.small-4
+				
+					.columns.small-3
+						input#user-name(type="text", placeholder='Type inn you\'r name...')
+					.columns.small-1
+						input#submit.button(type='submit' value='Join chat!')
+					.columns.small-4
+
+
+		section#about
+			.row
+				.large-12.columns
+					.text-center
+						h2 About this project
+						p The purpose of this project was to learn react and foundation. this site is built with gulp, and served as an express application. I thought jade might would be usefull, untill I understood that I was supposed to write html inside the react render function. The jade template became pretty small because of that and the only thing the body contains is a #chat-app tag, hmm... not quite as planned.
+
+					.row
+						.column.large-4.panel
+							h3.text-center GitHub project
+							a(href='https://github.com/Eskalol/simpleChatApp'): img(src='imgs/GitHub-Mark.png')
+							p Here is a link to the git project, I don't maintain the app often, maybe if theres some crucial bugs.
+						.column.large-4.panel
+							h3.text-center Yeoman
+							img(src='imgs/yeoman-logo.png')
+							p There will be a yeomam generator soon...
+						.column.large-4.panel
+							h3.text-center Heroku
+							img(src='imgs/heroku-logo-for-facebook.png')
+							p This project is hosted on heroku, I usually host my test projects there, really cool though. check it out :)
+		footer.footer
+			.row(style='width:100%'): h4(style='color: #f2f2f2;') Made by Eska
+
 
 		script(src="js/vendor.js")
 		script(src="js/app.js")
-		script(src="js/reactapp.js")

@@ -1,0 +1,48 @@
+@import 'app';
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.jumbo {
+	background: url(/imgs/chat-app-bg.png);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 300px 0;
+    margin-bottom: 30px;
+    
+
+    h1 {
+    	color: #fff;
+    	text-align: cener;
+    	margin-bottom: 15px;
+    }
+
+
+    section {
+    	padding-bottom: 150px;
+    }
+}
+
+.footer {
+	background-color: #222;
+	height: 5vh;
+}
+
+
+.name {
+    width: 40vh;
+    background: #001C32;
+    padding: 5px 30px;
+    height: 70px !important;
+}
+.top {
+    min-height: 50px!important;
+    //height: 50px !important;
+}

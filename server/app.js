@@ -13,6 +13,11 @@ app.get('/', function(req, res) {
 	res.sendFile(path.resolve(__dirname + '/../public/index.html'));
 });
 
+app.get('/chat', function(req, res) {
+	res.sendFile(path.resolve(__dirname + '/../public/chat.html'));
+});
+
+
 //server
 var server = app.listen(80, function() {
 	var host = server.address().address;

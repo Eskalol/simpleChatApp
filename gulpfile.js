@@ -60,7 +60,7 @@ var paths = {
 var path = {
 	'jsvendor' : [
 		paths.bower + '/jquery/dist/jquery.js',
-		paths.bower + '/foundation-sites/*.js',
+		paths.bower + '/foundation-sites/dist/foundation.js',
 		paths.node + '/socket.io-client/socket.io.js',
 		paths.bower + '/react/react.js',
 		paths.bower + '/react/react-dom.js'
@@ -75,10 +75,10 @@ var path = {
 		paths.bower + '/foundation-sites/scss'
 	],
 	'sass' : [
-		paths.assets + '/styles/app.scss'
+		paths.assets + '/styles/**/*.scss'
 	],
 	'jade' : [
-		paths.assets + '/templates/index.jade'
+		paths.assets + '/templates/*.jade'
 	]
 };
 
@@ -139,7 +139,7 @@ gulp.task('sass', function() {
 				path.sassvendor
 			]
 		}))
-		.pipe(concat('app.css'))
+		//.pipe(concat('app.css'))
 		.pipe(production ? cssmin() : gutil.noop())
 		.pipe(gulp.dest(public + '/css'))
 		.pipe(serve ? server.notify() : gutil.noop());
