@@ -4,10 +4,11 @@ var express = require('express'),
 
 //live reload
 try {
-	//in dev
 	app.use(require('connect-livereload')());
+	//in dev
 } catch(err) {
 	//production
+	console.log('production');
 }
 
 //static files
