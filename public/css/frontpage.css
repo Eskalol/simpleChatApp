@@ -3307,6 +3307,8 @@ html, body {
     margin-bottom: 15px; }
   .jumbo section {
     padding-bottom: 150px; }
+  .jumbo #user-name {
+    opacity: 0.5; }
 
 .fullWidth {
   width: 100%;
