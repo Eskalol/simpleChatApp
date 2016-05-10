@@ -84,18 +84,7 @@ var path = {
 
 /**
  * Compile ES2015 javascript
- *
-gulp.task('react', function() {
-	return gulp.src(path.jsx)
-		.pipe(babel({
-			presets: ['es2015', 'react']
-		}))
-		.pipe(concat('reactapp.js'))
-		.pipe(production ? uglify() : gutil.noop())
-		.pipe(gulp.dest(public + '/js'))
-		.pipe(serve ? server.notify() : gutil.noop());
-}); */
-
+ */
 gulp.task('react', function() {
 	return browserify({entries: path.jsx, extensions: ['.jsx'], debug: true})
 		.transform('babelify', {presets: ['es2015', 'react']})
