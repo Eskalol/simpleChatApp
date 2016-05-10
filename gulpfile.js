@@ -100,7 +100,7 @@ gulp.task('react', function() {
 	return browserify({entries: path.jsx, extensions: ['.jsx'], debug: true})
 		.transform('babelify', {presets: ['es2015', 'react']})
 		.bundle()
-		.pipe(production ? uglify() : gutil.noop())
+		//.pipe(production ? uglify() : gutil.noop())
 		.pipe(source('reactapp.js'))
 		.pipe(gulp.dest(public + '/js'))
 		.pipe(serve ? server.notify() : gutil.noop());
@@ -133,6 +133,8 @@ gulp.task('js', function() {
  * Compile SASS
  */
 gulp.task('sass', function() {
+
+
 	return gulp.src(path.sass)
 		.pipe(sass({
 			includePaths: [
