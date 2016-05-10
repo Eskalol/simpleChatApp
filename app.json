@@ -1,0 +1,5 @@
+{
+	"name": "Simple chat application",
+	"description": "Just a simple chat application Node.js, socket.io, Foundation, React",
+	"keywords": ["node", "express"]
+}

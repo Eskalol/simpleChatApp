@@ -4,7 +4,7 @@ html
 		meta(name="viewport" content="width=device-width, initial-scale=1.0")
 		title Eska - Simple chat app
 		link(rel='stylesheet', href='css/frontpage.css')
-	body:#top
+	body: #top
 		.top-bar-container(data-sticky-container)
 			.sticky(data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;")
 				.top-bar
@@ -35,20 +35,22 @@ html
 				.columns
 					.text-center
 						h2 About this project
-						p The purpose of this project was to learn react and foundation. this site is built with gulp, and served as an express application. I thought jade might would be usefull, untill I understood that I was supposed to write html inside the react render function. The jade template became pretty small because of that and the only thing the body contains is a #chat-app tag, hmm... not quite as planned.
+						p The purpose of this project is to learn react, foundation and socket.io. The site is built with gulp, and served as an express application. I thought jade might would be usefull, untill I understood that I was supposed to write html inside the react render function. The jade template became pretty small because of that, and the only thing the body contains is a #chat-app tag, hmm... not quite as planned. The site is still under development. I'm also going to test out the cool new library motion ui in this project.
 
 					.row
 						.columns.large-4.small-12.medium-4
 							h3.text-center GitHub project
 							a(href='https://github.com/Eskalol/simpleChatApp'): img(src='imgs/GitHub-Mark.png')
 							p Here is a link to the git project, I don't maintain the app often, maybe if theres some crucial bugs.
+								br
+								a(href='https://github.com/Eskalol/simpleChatApp') Github: Eskalol
 						.columns.large-4.small-12.medium-4
 							h3.text-center Yeoman
 							img(src='imgs/yeoman-logo.png')
 							p There will be a yeomam generator soon...
 						.columns.large-4.small-12.medium-4
 							h3.text-center Heroku
-							img(src='imgs/heroku-logo-for-facebook.png')
+							a(href='www.heroku.com'): img(src='imgs/heroku-logo-for-facebook.png')
 							p This project is hosted on heroku, I usually host my test projects there, really cool though. check it out :)
 		
 
