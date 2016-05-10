@@ -6,7 +6,7 @@ var express = require('express'),
 try {
 	//in dev
 	app.use(require('connect-livereload')());
-} catch {
+} catch(err) {
 	//production
 }
 
