@@ -3308,15 +3308,29 @@ html, body {
   .jumbo section {
     padding-bottom: 150px; }
 
+.fullWidth {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: initial; }
+
+.top-bar-container .sticky {
+  width: 100%; }
+  .top-bar-container .sticky .top-bar {
+    background-color: #333333; }
+    .top-bar-container .sticky .top-bar .name {
+      color: #999999;
+      font-size: 1.5em; }
+    .top-bar-container .sticky .top-bar .top-bar-right .menu.align-right > li a {
+      color: #F6F6F6; }
+    .top-bar-container .sticky .top-bar .top-bar-right .menu.align-right > li a:hover {
+      text-decoration: underline; }
+    .top-bar-container .sticky .top-bar .menu-toggle {
+      color: #999999; }
+
 .footer {
-  background-color: #222;
+  background-color: #333333;
   height: 5vh; }
-
-.name {
-  width: 40vh;
-  background: #001C32;
-  padding: 5px 30px;
-  height: 70px !important; }
-
-.top {
-  min-height: 50px !important; }
+  .footer .contact {
+    color: #999999;
+    margin-top: 1vh; }
