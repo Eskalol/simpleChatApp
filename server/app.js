@@ -16,9 +16,6 @@ app.use(express.static(__dirname + '/../public'));
 
 //routing
 app.get('/', function(req, res) {
-	//req inneholder data fra get, cookie params etc...
-	//her kan vi kalle andre apllikasjoner og håndtere data
-	//uten å tenke på ssl
 
 	res.sendFile(path.resolve(__dirname + '/../public/index.html'));
 });
